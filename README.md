@@ -205,7 +205,7 @@ ISC
 
 ## 👤 작성자
 
-doraemon01@naver.com
+XXXXXXXXXXX
 
 ## 🔗 관련 링크
 
