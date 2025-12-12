@@ -1,0 +1,11 @@
+[2025-12-12 16:03] .gitignore 파일 생성
+- Node.js 프로젝트에 적합한 .gitignore 파일 생성
+- 포함된 항목:
+  * node_modules/ (의존성 패키지)
+  * 로그 파일 (*.log, logs/, log/)
+  * 환경 변수 파일 (.env)
+  * OS 관련 파일 (.DS_Store 등)
+  * IDE 설정 파일 (.vscode/, .idea/)
+  * 빌드 출력 (dist/, build/)
+  * 임시 파일
+  * 개인키 및 민감한 데이터 (*.pem, *.key, private/, secrets/)

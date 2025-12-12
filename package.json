@@ -1,0 +1,33 @@
+{
+  "name": "web3jsfromnodejs",
+  "version": "1.0.0",
+  "description": "tokenpass wallet project for nodeJs server",
+  "main": "setup.js",
+  "scripts": {
+    "test": "Hello World~"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doraemon01/web3jsFromNodeJs.git"
+  },
+  "keywords": [
+    "doraemon01"
+  ],
+  "author": "doraemon01@naver.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/doraemon01/web3jsFromNodeJs/issues"
+  },
+  "homepage": "https://github.com/doraemon01/web3jsFromNodeJs#readme",
+  "dependencies": {
+    "bignumber.js": "^9.0.0",
+    "body-parser": "^1.19.0",
+    "ethereumjs-tx": "^2.1.2",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "node-fetch": "^2.6.0",
+    "node-rest-client": "^3.1.0",
+    "web3": "^1.2.6",
+    "web3-utils": "^1.2.6"
+  }
+}
