@@ -9,3 +9,57 @@
   * 빌드 출력 (dist/, build/)
   * 임시 파일
   * 개인키 및 민감한 데이터 (*.pem, *.key, private/, secrets/)
+  * constants.js (보안사항)
+
+[2025-12-12 16:07] GitHub 저장소에 푸시 완료
+- Git 저장소 초기화 (git init)
+- 모든 파일 추가 (git add .)
+- 초기 커밋 생성 (git commit -m "Initial commit")
+- 원격 저장소 설정: https://github.com/moonlightpark/nodeServer.git
+- main 브랜치로 푸시 완료 (git push -u origin main)
+- 총 20개 오브젝트, 16개 파일 커밋됨
+- constants.js는 .gitignore에 포함되어 Git에 업로드되지 않음
+
+[2025-12-12 16:09] README.md 파일 작성 완료
+- 프로젝트 개요 및 주요 기능 설명
+- 기술 스택 및 의존성 정보
+- 설치 방법 및 환경 설정 가이드
+- 전체 API 엔드포인트 문서화 (20개 이상의 API)
+- 프로젝트 구조 설명
+- 보안 관련 주의사항
+- API 요청 예시 코드 포함
+- 지원 네트워크 정보 (Mainnet, Ropsten, Dev)
+
+[2025-12-12 16:13] README.md 파일 Git 푸시 완료
+- README.md 파일 추가 (git add README.md)
+- 커밋 생성 (git commit -m "Add README.md documentation")
+- GitHub에 푸시 완료 (git push origin main)
+- 222줄의 문서 추가됨
+- 커밋 해시: f9af4c3
+
+[2025-12-12 16:49] README.md 작성자 정보 수정 후 푸시
+- 작성자 정보 수정 (doraemon01@naver.com → XXXXXXXXXXX)
+- 커밋 생성 (git commit -m "Update author information in README.md")
+- GitHub에 푸시 완료 (git push origin main)
+- 커밋 해시: a15431d
+
+[2025-12-13 00:24] Ropsten 테스트넷을 Sepolia로 전면 변경
+- Ropsten 테스트넷이 폐쇄되어 Sepolia 테스트넷으로 마이그레이션
+- 변경된 파일:
+  * abis/ropsten/ → abis/sepolia/ (디렉토리 이름 변경)
+  * README.md: 모든 Ropsten 참조를 Sepolia로 변경
+  * server.js: 포트 주석 및 API 응답 주석 업데이트
+  * dev.js: 포트 주석 및 API 응답 주석 업데이트
+  * doraemon01.js: 포트 주석 및 API 응답 주석 업데이트
+  * getWeb3.js: 네트워크 ID "ropsten" → "sepolia" 변경
+    - netIdName: 'Ropsten' → 'Sepolia'
+    - trustApiName: 'ropsten' → 'sepolia'
+    - explorerUrl: 'https://ropsten.etherscan.io' → 'https://sepolia.etherscan.io'
+  * classes/txStore.js: 모든 ropsten 참조를 sepolia로 변경
+    - ERC20ABI 파일 경로: './abis/ropsten/ERC20ABI.json' → './abis/sepolia/ERC20ABI.json'
+    - EthereumTx chain 파라미터: 'ropsten' → 'sepolia'
+    - 총 8개 함수에서 네트워크 체인 설정 변경
+- 주의: constants.js 파일은 .gitignore에 포함되어 있어 직접 수정 필요
+  * rpcURL을 'https://sepolia.infura.io/v3/YOUR_API_KEY'로 변경
+  * netId를 'sepolia'로 변경
+  * ABI 파일 경로를 './abis/sepolia/'로 변경

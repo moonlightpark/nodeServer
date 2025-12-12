@@ -4,7 +4,7 @@ const BN = require('bignumber.js');
 var app = express();
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
-const port = 3000; // 3000:developer, 3001:main-net, 3002:ropsten
+const port = 3000; // 3000:developer, 3001:main-net, 3002:sepolia
 
 // 웹서버 start
 var server = app.listen(port, function(){
@@ -157,7 +157,7 @@ app.get('/ether/getbalance', function(req, res){ // end point 정의
 // 네트워크에 연결되어 있는 정보 조회
 // method get
 // request {}
-// response {error:boolean, body:{netIdName:Ropsten, explorerUrl:https://ropsten.etherscan.io}}
+// response {error:boolean, body:{netIdName:Sepolia, explorerUrl:https://sepolia.etherscan.io}}
 app.get('/ether/version/network', (req, res) => { // end point 정의
 	// web3Info 에서 정보 조회
 	let res_data = {

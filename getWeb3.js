@@ -17,11 +17,11 @@ module.exports = class GetWeb3{
 				  this.explorerUrl = 'https://etherscan.io'
 				  console.log('This is Foundation', this.netId)
 				  break;
-			case "ropsten":
-				  this.netIdName = 'Ropsten'
-				  this.trustApiName = 'ropsten'
-				  this.explorerUrl = 'https://ropsten.etherscan.io'
-				  console.log('This is Ropsten', this.netId)
+			case "sepolia":
+				  this.netIdName = 'Sepolia'
+				  this.trustApiName = 'sepolia'
+				  this.explorerUrl = 'https://sepolia.etherscan.io'
+				  console.log('This is Sepolia', this.netId)
 				  break;
 			case "4":
 				  this.netIdName = 'Rinkeby'

@@ -84,7 +84,7 @@ class txStore {
 		console.log('txStore -> getTokenGasPrice');
 		try{
 			const tokenInfo = await this.common.getTokenInfo(web3Instance, req.address); // token 기본정보 호출			
-			this.ERC20ABI = JSON.parse(fs.readFileSync('./abis/ropsten/ERC20ABI.json'));
+			this.ERC20ABI = JSON.parse(fs.readFileSync('./abis/sepolia/ERC20ABI.json'));
 			
 			//console.log(this.constants.ERC20ABI);
 			var ABI = this.constants.ERC20ABI;
@@ -153,8 +153,8 @@ class txStore {
 				data: '0x', // 이더 전송이므로 인코딩 데이터 필요없음
 			}
 			let privateKey = Buffer.from(req.key, 'hex'); // privateKey
-			if (constants.netId() == "ropsten"){ // ropsten 인경우 두번째 인자로 chain을 전송해줘야한다.
-				var transaction = new EthereumTx(tx, {'chain':'ropsten'}); // ropsten
+			if (constants.netId() == "sepolia"){ // sepolia 인경우 두번째 인자로 chain을 전송해줘야한다.
+				var transaction = new EthereumTx(tx, {'chain':'sepolia'}); // sepolia
 			} else {
 				var transaction = new EthereumTx(tx); // main net
 			}
@@ -198,9 +198,9 @@ class txStore {
 				data: encodedData, // transfer method 인코딩 데이터 
 			}
 			let privateKey = Buffer.from(req.key, 'hex'); // privateKey
-			if (constants.netId() == "ropsten"){ // ropsten 인경우 두번째 인자로 chain을 전송해줘야한다.
-				console.log('transferToken -> ropsten ');
-				var transaction = new EthereumTx(tx, {'chain':'ropsten'}); // ropsten
+			if (constants.netId() == "sepolia"){ // sepolia 인경우 두번째 인자로 chain을 전송해줘야한다.
+				console.log('transferToken -> sepolia ');
+				var transaction = new EthereumTx(tx, {'chain':'sepolia'}); // sepolia
 			} else {
 				console.log('transferToken -> main ');
 				var transaction = new EthereumTx(tx); // main net
@@ -251,8 +251,8 @@ class txStore {
 				data: encodedData, // depositUserToken method 인코딩 데이터
 			}
 			let privateKey = Buffer.from(constants.SENDER_OWNER_KEY(), 'hex'); // sender owner privateKey
-			if (constants.netId() == "ropsten"){ // ropsten 인경우 두번째 인자로 chain을 전송해줘야한다.
-				var transaction = new EthereumTx(tx, {'chain':'ropsten'}); // ropsten
+			if (constants.netId() == "sepolia"){ // sepolia 인경우 두번째 인자로 chain을 전송해줘야한다.
+				var transaction = new EthereumTx(tx, {'chain':'sepolia'}); // sepolia
 			} else {
 				var transaction = new EthereumTx(tx); // main net
 			}
@@ -297,8 +297,8 @@ class txStore {
 				data: encodedData, // claimUserFees method 인코딩 데이터
 			}
 			let privateKey = Buffer.from(constants.SENDER_OWNER_KEY(), 'hex'); // sender owner privateKey
-			if (constants.netId() == "ropsten"){ // ropsten 인경우 두번째 인자로 chain을 전송해줘야한다.
-				var transaction = new EthereumTx(tx, {'chain':'ropsten'}); // ropsten
+			if (constants.netId() == "sepolia"){ // sepolia 인경우 두번째 인자로 chain을 전송해줘야한다.
+				var transaction = new EthereumTx(tx, {'chain':'sepolia'}); // sepolia
 			} else {
 				var transaction = new EthereumTx(tx); // main net
 			}
@@ -372,8 +372,8 @@ class txStore {
 			}
 			let privateKey = Buffer.from(senderOwnerKey, 'hex'); // sender owner privateKey
 			console.log(constants.netId); // log
-			if (constants.netId == "ropsten"){ // ropsten 인경우 두번째 인자로 chain을 전송해줘야한다.
-				var transaction = new EthereumTx(tx, {'chain':'ropsten'}); // ropsten
+			if (constants.netId == "sepolia"){ // sepolia 인경우 두번째 인자로 chain을 전송해줘야한다.
+				var transaction = new EthereumTx(tx, {'chain':'sepolia'}); // sepolia
 			} else {
 				var transaction = new EthereumTx(tx); // main net
 			}
@@ -395,7 +395,7 @@ class txStore {
 				};
 				this.cotrolI = this.cotrolI + 1; // updateReceipt 제어자
 				if (this.cotrolI == 1){ // 한번만 돌게 한다.
-					if (constants.netId() == "ropsten"){ // ropsten 인경우 sub domain dev
+					if (constants.netId() == "sepolia"){ // sepolia 인경우 sub domain dev
 						client.post("https://dev.tokenpass.me/v1/transction/updateReceipt", args, function (data, response) {});// receipt 업데이트
 					} else { // main net 인경우 sub domain api
 						client.post("https://api.tokenpass.me/v1/transction/updateReceipt", args, function (data, response) {});// receipt 업데이트
@@ -410,7 +410,7 @@ class txStore {
 				  headers: { "Content-Type": "application/json" }
 				};
 				// pendding 업데이트
-				if (constants.netId == "ropsten"){ // ropsten 인경우 sub domain dev
+				if (constants.netId == "sepolia"){ // sepolia 인경우 sub domain dev
 					client.post("https://dev.tokenpass.me/v1/transction/updateHash", args, function (data, response) {}); // tx hash 업데이트
 				} else { // main net 인경우 sub domain api
 					client.post("https://api.tokenpass.me/v1/transction/updateHash", args, function (data, response) {}); // tx hash 업데이트

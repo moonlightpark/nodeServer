@@ -62,7 +62,7 @@ npm install
 ## ⚙️ 환경 설정
 
 `constants.js` 파일에 다음 정보를 설정해야 합니다:
-- 네트워크 설정 (Mainnet, Ropsten 등)
+- 네트워크 설정 (Mainnet, Sepolia 등)
 - 컨트랙트 주소
 - Private Key
 - 접근 허용 IP 목록
@@ -79,7 +79,7 @@ node server.js
 # 개발 서버 실행 (포트 3000)
 node dev.js
 
-# Ropsten 테스트넷 서버 실행 (포트 3002)
+# Sepolia 테스트넷 서버 실행 (포트 3002)
 node doraemon01.js
 ```
 
@@ -130,7 +130,7 @@ nodeServer/
 ├── abis/                    # 스마트 컨트랙트 ABI 파일
 │   ├── ERC20ABI.json
 │   ├── sender.json
-│   └── ropsten/
+│   └── sepolia/
 ├── classes/                 # 클래스 모듈
 │   ├── gasPriceStore.js    # Gas Price 관리
 │   └── txStore.js          # 트랜잭션 처리
@@ -142,7 +142,7 @@ nodeServer/
 ├── mysql-db.js             # MySQL 연결 (선택사항)
 ├── server.js               # 메인 서버 (포트 3001)
 ├── dev.js                  # 개발 서버 (포트 3000)
-├── doraemon01.js           # Ropsten 서버 (포트 3002)
+├── doraemon01.js           # Sepolia 서버 (포트 3002)
 └── package.json            # 프로젝트 설정
 ```
 
@@ -196,7 +196,7 @@ Content-Type: application/json
 ## 🌐 지원 네트워크
 
 - Ethereum Mainnet (포트 3001)
-- Ropsten Testnet (포트 3002)
+- Sepolia Testnet (포트 3002)
 - 개발 환경 (포트 3000)
 
 ## 📄 라이선스
